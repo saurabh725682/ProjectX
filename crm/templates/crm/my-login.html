@@ -1,0 +1,34 @@
+{% extends "crm/layout.html" %}
+
+{% block content %}
+
+    <div class='container bg-dark shadow-md p-5 form-layout'>
+
+        <h3>Login to your account</h3>
+
+        <hr><br>
+
+        <form method='POST' autocomplete='off'>
+
+            {% csrf_token %}
+
+            <p>Enter username:</p>
+            {{ form.username }} <br><br>
+
+            <p>Enter password:</p>
+            {{ form.password}} <br><br>
+
+            <button type='submit' class='btn btn-primary'>Login &nbsp; <i class='fa fa-key' aria-hidden='true'></i></button>
+
+        </form>
+        <br>
+
+        <div class='text-center'>
+
+            <p>Don't have an account</p> <a href="{% url 'register' %}">register</a>
+
+        </div>
+
+    </div>
+
+{% endblock %}

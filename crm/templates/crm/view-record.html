@@ -1,0 +1,42 @@
+{% extends 'crm/layout.html' %}
+
+{% block content %}
+
+  <div class='card'>
+
+    <div class='card-body'>
+
+      <i class='fa fa-user-circle-o' aria-hidden='true'></i>  &nbsp;
+
+      <strong>
+        {{record.first_name|upper}}
+        {{record.last_name|upper}}
+      </strong>
+
+    </div>
+    <hr>
+
+    <div class='card-body'> 
+
+      <p> <strong> ID: &nbsp;</strong> {{record.id}} </p>
+      <p> <strong> Email: &nbsp;</strong> {{record.email}} </p>
+      <p> <strong> Phone number: &nbsp;</strong> {{record.phone}} </p>
+      <p> <strong> Address: &nbsp;</strong> {{record.address}} </p>
+      <p> <strong> City: &nbsp;</strong> {{record.city}} </p>
+      <p> <strong> State: &nbsp;</strong> {{record.state}} </p>
+      <p> <strong> Date_joined: &nbsp;</strong> {{record.creation_date}} </p>
+
+    </div>   
+    <br>
+    
+    <div> 
+      <a href="{% url 'dashboard' %}" class='btn btn-secondary'>Return &nbsp; <i class='fa fa-arrow-left' aria-hidden='true' ></i> </a>
+      &nbsp;
+      <a href="{% url 'update-record' record.id %}" class='btn btn-info'>Update record &nbsp; <i class='fa fa-plus' aria-hidden='true'></i> </a>
+      &nbsp;
+      <a href="{% url 'delete-record' record.id %}" class='btn btn-danger'>Delete &nbsp; <i class='fa fa-minus-square' aria-hidden='true'></i></a>
+    </div>
+    
+  </div>
+
+{% endblock %}

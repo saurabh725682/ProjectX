@@ -1,0 +1,49 @@
+{% extends "crm/layout.html" %}
+
+{% block content %}
+
+    <div class='container bg-dark shadow-md p-5 form-layout'>
+
+        <h3>Update record</h3>
+
+        <h6>Update your record down below. </h6>
+
+        <hr><br>
+
+        <form method='POST' autocomplete='off'>
+
+            {% csrf_token %}
+
+            <p>Enter First Name:</p>
+            {{ form.first_name }} <br><br>
+
+            <p>Enter Last Name:</p>
+            {{ form.last_name }} <br><br>
+
+            <p>Enter Email id:</p>
+            {{ form.email }} <br><br>
+
+            <p>Enter Phone number:</p>
+            {{ form.phone }} <br><br>
+
+            <p>Enter Address:</p>
+            {{ form.address }} <br><br>
+
+            <p>Enter City Name:</p>
+            {{ form.city }} <br><br>
+
+            <p>Enter State Name:</p>
+            {{ form.state }} <br><br>
+
+            <button type='submit' class='btn btn-primary'>Update record &nbsp;
+                
+            <i class='fa fa-plus' aria-hidden='true'></i></button> &nbsp;
+
+            <a href="{% url 'dashboard' %}" class='btn btn-secondary'>Return &nbsp; 
+            
+            <i class='fa fa-arrow-left' aria-hidden='true'></i></a>
+        </form>
+
+    </div>
+
+{% endblock %}
