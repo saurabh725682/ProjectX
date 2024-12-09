@@ -1,5 +1,3 @@
-# ProjectX
-
 CRM Project
 
 Introduction
